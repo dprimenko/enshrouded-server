@@ -3,7 +3,8 @@ version: '3.3'
 services:
   enshrouded:
     build:
-      dockerfile: ./dockerfile
+      context: ./
+      dockerfile: dockerfile
     deploy:
       restart_policy:
         condition: any
