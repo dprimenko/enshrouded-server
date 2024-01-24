@@ -13,7 +13,7 @@ services:
         window: 120s
     ports:
       - "15636:15636"
-      - "15637:15667"
+      - "15637:15637"
     volumes:
       - "enshrouded_data:/home/steam/enshrouded"
 
