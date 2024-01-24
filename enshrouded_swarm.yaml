@@ -1,8 +1,9 @@
-version: '3.9'
+version: '3.3'
 
 services:
   enshrouded:
-    image: 'enshrouded:0.1'
+    build:
+      dockerfile: ./dockerfile
     deploy:
       restart_policy:
         condition: any
