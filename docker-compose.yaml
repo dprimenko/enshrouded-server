@@ -6,8 +6,8 @@ services:
       context: ./
       dockerfile: dockerfile
     ports:
-      - "15636:15636"
-      - "15637:15637"
+      - "15636:15636/udp"
+      - "15637:15637/udp"
     volumes:
       - "enshrouded_data:/home/steam/enshrouded"
     networks:
