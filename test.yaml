@@ -5,16 +5,25 @@ services:
     build:
       context: ./
       dockerfile: dockerfile
+    deploy:
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     ports:
       - "15636:15636"
       - "15637:15637"
     volumes:
       - "enshrouded_data:/home/steam/enshrouded"
+
     networks:
       - "backendnetwork"
     environment:
       - "ENSHROUDED_SERVER_NAME=puretascanosos"
       - "ENSHROUDED_SERVER_PASSWORD=4769"
+      - "ENSHROUDED_SERVER_SAVEDIRECTORY=./savegame"
+      - "ENSHROUDED_SERVER_LOGDIRECTORY=./logs"
       - "ENSHROUDED_SERVER_MAXPLAYERS=16"
 
 volumes:
